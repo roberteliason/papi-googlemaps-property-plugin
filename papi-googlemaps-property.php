@@ -45,8 +45,8 @@ add_action( 'papi/loaded', function () {
 } );
 
 add_action( 'wp_enqueue_scripts', function() {
+	$api_key = \PAPI_Google_Maps_Property\API::API_Key();
 
-
-	wp_enqueue_script( 'google_maps', "https://maps.googleapis.com/maps/api/js?key=" . $api_key . "&signed_in=false", 'jquery', false, true );
-	wp_enqueue_script( 'papi_property_googlemaps_frontend', PAPI_GM_PROPERTY_BASEDIR . 'resources/js/papi-property-googlemap-frontend.js', ['jquery', 'google'] );
+	wp_enqueue_script( 'google_maps', "https://maps.googleapis.com/maps/api/js?key=" . $api_key . "&signed_in=false", ['jquery'], false, true );
+	wp_enqueue_script( 'papi_property_googlemaps_frontend', PAPI_GM_PROPERTY_BASEURL . 'resources/js/papi-property-googlemap-frontend.js', ['jquery'] );
 } );
