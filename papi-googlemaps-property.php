@@ -36,6 +36,7 @@ load_plugin_textdomain( 'papi-gm-property', false, dirname( plugin_basename( __F
 /** Register with PAPI */
 add_filter( 'papi/settings/directories', function ( $directories ) {
     $directories[] = PAPI_GM_PROPERTY_BASEDIR . 'papi/page-types/';
+    $directories[] = PAPI_GM_PROPERTY_BASEDIR . 'papi/option/';
 
 	return $directories;
 } );

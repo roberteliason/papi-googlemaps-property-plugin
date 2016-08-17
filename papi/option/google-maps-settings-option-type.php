@@ -15,7 +15,9 @@ class Google_Maps_Settings_Option_Type extends Papi_Option_Type {
 	}
 
 	/**
-	 * Register reusable section meta box.
+	 * Register meta box.
+	 *
+	 * @todo Why you no register?
 	 */
 	public function register() {
 		$this->box( __( 'API Key', 'papi_gm_property' ), [ $this, 'register_api_key' ] );
@@ -23,16 +25,14 @@ class Google_Maps_Settings_Option_Type extends Papi_Option_Type {
 
 	/**
 	 * @return array
-	 *
-	 * @todo Why you no show?
 	 */
 	public function register_api_key() {
 		return [
             papi_property( [
-                'title'    => __( 'API Key', 'papi_gm_property' ),
+                'title'    => __( 'Google Maps API Key', 'papi_gm_property' ),
                 'type'     => 'string',
-                'slug'     => 'google_maps_api_key'
-			] )
+                'slug'     => 'google_maps_api_key',
+			] ),
 		];
 	}
 
